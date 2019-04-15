@@ -15,7 +15,9 @@ class Server():
 		while True:
 			try:
 				self.conn = self.setupConnection()
+				print('hi')
 				self.dataTransfer()
+				print('hey')
 			except:
 				break
 				
