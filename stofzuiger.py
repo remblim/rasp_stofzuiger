@@ -2,16 +2,17 @@ from conectie import Server
 from DC_Motor import dc_motor
 import RPi.GPIO as GPIO
 
-
+#initialisatie code
+GPIO.setmode(GPIO.BOARD) #board setten
 run = True
+
 Connecting = Server()
 Motor = dc_motor()
 
 server = Server()
 server.setupConnection()
 
-#initialisatie code
-GPIO.setmode(GPIO.BOARD) #board setten
+
 
 
 while run:
