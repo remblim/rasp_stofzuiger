@@ -38,17 +38,11 @@ class Server():
 				print('right')
 			elif command == 'w':
 				print('forward')
-				break
 			elif command == 's':
 				print('backward')
 			elif command == 'esc':
 				self.s.close()
 				break
-			else:
-				reply = 'unknown command'
-				
-			self.conn.sendall(str.encode(reply))
-			print('data has been sent')
 		self.conn.close()
 	
 
