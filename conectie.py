@@ -41,7 +41,7 @@ class Server():
 				break
 			elif command == 's':
 				print('backward')
-			elif command = 'esc':
+			elif command == 'esc':
 				self.s.close()
 				break
 			else:
