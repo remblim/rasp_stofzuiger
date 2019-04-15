@@ -4,7 +4,6 @@ class Server():
 	def __init__(self):
 		self.port = 5560
 		self.host = ''
-		self.s = setupServer()
 		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		print('socket is gemaakt')
 		try:
