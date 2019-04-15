@@ -33,7 +33,8 @@ class Server():
 		reply = dataMessage[1]
 		return reply
 
-	def dataTransfer(self,):
+	def dataTransfer(self):
+		print('transfer data')
 		while True:
 			data = self.conn.recv(1024)
 			data = data.decode('utf-8')
