@@ -1,5 +1,7 @@
 from conectie import Server
 from DC_Motor import dc_motor
+import RPi.GPIO as GPIO
+
 
 run = True
 Connecting = Server()
