@@ -14,6 +14,7 @@ class Server():
 
 		while True:
 			try:
+				print('try')
 				self.conn = self.setupConnection()
 				print('hi')
 				self.dataTransfer()
