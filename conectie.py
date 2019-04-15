@@ -3,26 +3,28 @@ import socket
 class Server():
 	def __init__(self):
 		self.port = 5560
+		self.host = ''
+		self.s = setupServer()
 		while True:
 			try:
-				conn = setupConnection()
-				dataTransfer(conn)
+				conn = self.setupConnection()
+				self.dataTransfer(conn)
 			except:
 				break
 			
 	def setupServer():
-		s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		print('socket is gemaakt')
 		try:
-			s.bind((host, port))
+			self.s.bind((self.host, self.port))
 		except socket.error as msg:
 			print(msg)
 		print("socket bind complete")
 		return s
 		
 	def setupConnection():
-		s.listen(1)
-		conn, address = s.accept()
+		self.s.listen(1)
+		self.conn, address = self.s.accept()
 		print('hello')
 		return conn
 		
@@ -49,15 +51,15 @@ class Server():
 				break
 			elif command == 'KILL':
 				print('shutdown')
-				s.close()
+				self.s.close()
 				break
 			else:
 				reply = 'unknown command'
 				
-			conn.sendall(str.encode(reply))
+			self.conn.sendall(str.encode(reply))
 			print('data has been sent')
-		conn.close()
-	s = setupServer()
+		self.conn.close()
+	
 
 if __name__ == "__main__":
 	server = Server()
