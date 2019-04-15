@@ -14,8 +14,8 @@ class Server():
 
 		while True:
 			try:
-				conn = self.setupConnection()
-				self.dataTransfer(conn)
+				self.conn = self.setupConnection()
+				self.dataTransfer()
 			except:
 				break
 				
@@ -33,9 +33,9 @@ class Server():
 		reply = dataMessage[1]
 		return reply
 
-	def dataTransfer(self,conn):
+	def dataTransfer(self,):
 		while True:
-			data = conn.recv(1024)
+			data = self.conn.recv(1024)
 			data = data.decode('utf-8')
 			dataMessage = data.split(' ',1)
 			command = dataMessage[0]
