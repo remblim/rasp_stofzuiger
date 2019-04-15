@@ -27,25 +27,11 @@ class Server():
 		
 	def dataTransfer(self):
 		print('transfer data')
-		while True:
-			data = self.conn.recv(1024)
-			data = data.decode('utf-8')
-			dataMessage = data.split(' ',1)
-			command = dataMessage[0]
-			if command == 'a':
-				print('left')
-			elif command == 'd':
-				print('right')
-			elif command == 'w':
-				print('forward')
-			elif command == 's':
-				print('backward')
-			elif command == 'esc':
-				break
 
-		self.conn.close()
-	
-
+		command = self.conn.recv(1024)
+		command = data.decode('utf-8')
+		return command
+		
 if __name__ == "__main__":
 	server = Server()
 	server.setupConnection()
