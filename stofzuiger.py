@@ -1,5 +1,5 @@
 from conectie import Server
-from DC-Motor import dc_motor
+from DC_Motor import dc_motor
 
 run = True
 Connecting = Server()
