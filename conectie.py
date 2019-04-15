@@ -42,6 +42,10 @@ class Server():
 				print('backward')
 			elif command == 'esc':
 				break
+			elif command == 'kill':
+				print('shutdown')
+				self.s.close()
+				break
 		self.conn.close()
 	
 
