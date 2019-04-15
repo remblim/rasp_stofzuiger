@@ -5,14 +5,6 @@ class Server():
 		self.port = 5560
 		self.host = ''
 		self.s = setupServer()
-		while True:
-			try:
-				conn = self.setupConnection()
-				self.dataTransfer(conn)
-			except:
-				break
-			
-	def setupServer():
 		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		print('socket is gemaakt')
 		try:
@@ -20,8 +12,14 @@ class Server():
 		except socket.error as msg:
 			print(msg)
 		print("socket bind complete")
-		return s
-		
+
+		while True:
+			try:
+				conn = self.setupConnection()
+				self.dataTransfer(conn)
+			except:
+				break
+				
 	def setupConnection():
 		self.s.listen(1)
 		self.conn, address = self.s.accept()
