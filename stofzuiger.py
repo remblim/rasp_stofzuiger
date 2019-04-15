@@ -8,6 +8,10 @@ Motor = dc_motor()
 server = Server()
 server.setupConnection()
 
+#initialisatie code
+GPIO.setmode(GPIO.BOARD) #board setten
+
+
 while run:
 	command = server.dataTransfer()
 	if command == 'a':
