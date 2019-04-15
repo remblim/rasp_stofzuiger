@@ -12,29 +12,19 @@ class Server():
 			print(msg)
 		print("socket bind complete")
 
-		while True:
-			try:
-				print('try')
-				self.conn = self.setupConnection()
-				print('hi')
-				self.dataTransfer()
-				print('hey')
-			except:
-				break
+		
 				
 	def setupConnection(self):
-		self.s.listen(1)
-		self.conn, address = self.s.accept()
-		print('hello')
+		while True:
+			try:
+				print('setup connection')
+				self.s.listen(1)
+				self.conn, address = self.s.accept()
+				self.dataTransfer()
+			except:
+				break
 		
-	def Get(self):
-		reply = stored_Value
-		return reply
 		
-	def REPEAT(self,dataMessage):
-		reply = dataMessage[1]
-		return reply
-
 	def dataTransfer(self):
 		print('transfer data')
 		while True:
