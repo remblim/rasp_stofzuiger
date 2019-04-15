@@ -19,21 +19,21 @@ class Server():
 			except:
 				break
 				
-	def setupConnection():
+	def setupConnection(self):
 		self.s.listen(1)
 		self.conn, address = self.s.accept()
 		print('hello')
 		return conn
 		
-	def Get():
+	def Get(self):
 		reply = stored_Value
 		return reply
 		
-	def REPEAT(dataMessage):
+	def REPEAT(self,dataMessage):
 		reply = dataMessage[1]
 		return reply
 
-	def dataTransfer(conn):
+	def dataTransfer(self,conn):
 		while True:
 			data = conn.recv(1024)
 			data = data.decode('utf-8')
