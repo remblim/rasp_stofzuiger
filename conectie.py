@@ -26,7 +26,6 @@ class Server():
 		self.s.listen(1)
 		self.conn, address = self.s.accept()
 		print('hello')
-		return conn
 		
 	def Get(self):
 		reply = stored_Value
