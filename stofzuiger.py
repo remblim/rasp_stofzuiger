@@ -10,15 +10,15 @@ server.setupConnection()
 
 while run:
 	command = server.dataTransfer()
-	if command = 'a':
+	if command == 'a':
 		Motor.forward_1(1)
 		Motor.stop_2()
 		print('left')
-	elif command = 's':
+	elif command == 's':
 		Motor.stop_1()
 		Motor.stop_2()
 		print('backward')
-	elif command = 'd':
+	elif command == 'd':
 		Motor.stop_1()
 		Motor.forward_2(1)
 		print('right')
