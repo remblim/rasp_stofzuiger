@@ -32,15 +32,16 @@ class Server():
 			data = data.decode('utf-8')
 			dataMessage = data.split(' ',1)
 			command = dataMessage[0]
-			if command == 'GET':
-				reply = Get()
-			elif command == 'REPEAT':
-				reply = REPEAT(dataMessage)
-			elif command == 'EXIT':
-				print('afsluiten')
+			if command == 'a':
+				print('left')
+			elif command == 'd':
+				print('right')
+			elif command == 'w':
+				print('forward')
 				break
-			elif command == 'KILL':
-				print('shutdown')
+			elif command == 's':
+				print('backward')
+			elif command = 'esc':
 				self.s.close()
 				break
 			else:
@@ -54,3 +55,4 @@ class Server():
 if __name__ == "__main__":
 	server = Server()
 	server.setupConnection()
+	server.dataTransfer()
