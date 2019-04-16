@@ -10,6 +10,7 @@ class Server():
 			self.s.bind((self.host, self.port))
 		except socket.error as msg:
 			print(msg)
+			print('error')
 		print("socket bind complete")
 
 		
@@ -19,8 +20,8 @@ class Server():
 			try:
 				print('starting setup connection')
 				self.s.listen(1)
+				print('finished listening')
 				self.conn, address = self.s.accept()
-				self.dataTransfer()
 				print('connection setup')
 			except:
 				break
