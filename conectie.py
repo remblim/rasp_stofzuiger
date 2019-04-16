@@ -2,7 +2,7 @@ import socket
 
 class Server():
 	def __init__(self):
-		self.port = 5562
+		self.port = 50562
 		self.host = ''
 		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		print('socket is gemaakt')
@@ -12,8 +12,6 @@ class Server():
 			print(msg)
 			print('error')
 		print("socket bind complete")
-
-		
 				
 	def setupConnection(self):
 		while True:
@@ -25,7 +23,6 @@ class Server():
 				print('connection setup')
 			except:
 				break
-		
 		
 	def dataTransfer(self):
 		print('transfer data')
