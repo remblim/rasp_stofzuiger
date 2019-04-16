@@ -5,6 +5,7 @@ class Server():
 		self.port = 50562
 		self.host = ''
 		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+		self.s.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 		print('socket is gemaakt')
 		try:
 			self.s.bind((self.host, self.port))
