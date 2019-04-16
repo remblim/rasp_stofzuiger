@@ -22,10 +22,7 @@ class Server():
 		print('connection setup')
 		
 	def dataTransfer(self):
-		print('transfer data')
-
 		command = self.conn.recv(1024)
-		print('data recieved')
 		command = command.decode('utf-8')
 		print(command)
 		return command
