@@ -15,14 +15,11 @@ class Server():
 		print("socket bind complete")
 				
 	def setupConnection(self):
-		try:
-			print('starting setup connection')
-			self.s.listen(1)
-			print('finished listening')
-			self.conn, address = self.s.accept()
-			print('connection setup')
-		except:
-			break
+		print('starting setup connection')
+		self.s.listen(1)
+		print('finished listening')
+		self.conn, address = self.s.accept()
+		print('connection setup')
 		
 	def dataTransfer(self):
 		print('transfer data')
