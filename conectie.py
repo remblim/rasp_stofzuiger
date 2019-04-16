@@ -11,20 +11,16 @@ class Server():
 			self.s.bind((self.host, self.port))
 		except socket.error as msg:
 			print(msg)
-			print('error')
+			print('server error')
 		print("socket bind complete")
 				
 	def setupConnection(self):
-		print('starting setup connection')
 		self.s.listen(1)
-		print('finished listening')
 		self.conn, address = self.s.accept()
-		print('connection setup')
 		
 	def dataTransfer(self):
 		command = self.conn.recv(1024)
 		command = command.decode('utf-8')
-		print(command)
 		return command
 		
 if __name__ == "__main__":
