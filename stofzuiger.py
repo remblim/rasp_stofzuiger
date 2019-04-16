@@ -22,8 +22,8 @@ while run:
 		Motor.stop_2()
 		print('left')
 	elif command == 's':
-		Motor.stop_1()
-		Motor.stop_2()
+		Motor.backward_1(1)
+		Motor.backward_2(1)
 		print('backward')
 	elif command == 'd':
 		Motor.stop_1()
@@ -33,6 +33,9 @@ while run:
 		Motor.forward_1(1)
 		Motor.forward_2(1)
 		print('forward')
+	elif command == 'stop'
+		Motor.stop_1()
+		Motor.stop_2()		
 	elif command == 'esc':
 		Motor.stop_1()
 		Motor.stop_2()	
