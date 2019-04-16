@@ -29,7 +29,7 @@ class Server():
 		print('transfer data')
 
 		command = self.conn.recv(1024)
-		command = data.decode('utf-8')
+		command = command.decode('utf-8')
 		return command
 		
 if __name__ == "__main__":
