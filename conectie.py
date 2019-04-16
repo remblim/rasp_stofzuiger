@@ -17,10 +17,11 @@ class Server():
 	def setupConnection(self):
 		while True:
 			try:
-				print('setup connection')
+				print('starting setup connection')
 				self.s.listen(1)
 				self.conn, address = self.s.accept()
 				self.dataTransfer()
+				print('connection setup')
 			except:
 				break
 		
