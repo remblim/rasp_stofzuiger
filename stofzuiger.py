@@ -22,7 +22,7 @@ while run:
 		Motor.stop_2()
 		print('left')
 	elif command == 's':
-		Motor.stop_1(1)
+		Motor.stop_1()
 		Motor.backward_2(1)
 		print('backward')
 	elif command == 'd':
