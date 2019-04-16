@@ -33,7 +33,7 @@ while run:
 		Motor.forward_1(1)
 		Motor.forward_2(1)
 		print('forward')
-	elif command == 'stop'
+	elif command == 'stop':
 		Motor.stop_1()
 		Motor.stop_2()		
 	elif command == 'esc':
