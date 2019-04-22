@@ -16,6 +16,7 @@ mode = 0
 
 while run:
 	if mode == 0: #drive manual
+		print('manual drive')
 		command = server.dataTransfer()
 		if command == 'a':
 			Motor.forward_1(1)
@@ -46,4 +47,5 @@ while run:
 			Motor.stop_2()
 	
 	elif mode == 1:
+		print('automatic navigation')
 		
