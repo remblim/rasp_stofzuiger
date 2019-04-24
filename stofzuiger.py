@@ -39,7 +39,6 @@ while run:
 		elif command == 'esc':
 			Motor.stop_1()
 			Motor.stop_2()
-			break
 		else:
 			Motor.stop_1()
 			Motor.stop_2()
@@ -64,6 +63,9 @@ while run:
 	elif command == 'mode 4':
 		mode = 4
 		print(mode)
+	elif command == 'esc':
+		print('ending')
+		break
 	
 
 	server.send(str(mode))
