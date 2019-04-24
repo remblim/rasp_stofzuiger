@@ -43,14 +43,19 @@ while run:
 			break
 		elif command == 'mode 0':
 			mode = 0
+			print(mode)
 		elif command == 'mode 1':
 			mode = 1
+			print(mode)
 		elif command == 'mode 2':
 			mode = 2
+			print(mode)
 		elif command == 'mode 3':
 			mode = 3
+			print(mode)
 		elif command == 'mode 4':
 			mode = 4
+			print(mode)
 		else:
 			Motor.stop_1()
 			Motor.stop_2()
