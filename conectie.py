@@ -22,6 +22,9 @@ class Server():
 		command = self.conn.recv(1024)
 		command = command.decode('utf-8')
 		return command
+	
+	def send(self,data):
+		self.s.send(str.encode(data,'utf-8'))
 		
 if __name__ == "__main__":
 	server = Server()

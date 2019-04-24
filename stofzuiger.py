@@ -40,13 +40,14 @@ while run:
 			Motor.stop_2()		
 		elif command == 'esc':
 			Motor.stop_1()
-			Motor.stop_2()	
+			Motor.stop_2()
 			break
 		
 		else:
 			Motor.stop_1()
 			Motor.stop_2()
-	
 	elif mode == 1:
 		print('automatic navigation')
-		
+	
+
+	server.send(mode)
