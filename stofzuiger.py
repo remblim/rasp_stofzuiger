@@ -50,4 +50,4 @@ while run:
 		print('automatic navigation')
 	
 
-	server.send(mode)
+	server.send(str(mode))
