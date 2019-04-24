@@ -17,7 +17,6 @@ mode = 0
 while run:
 	print('running')
 	if mode == 0: #drive manual
-		print('manual drive')
 		command = server.dataTransfer()
 		if command == 'a':
 			Motor.forward_1(1)
