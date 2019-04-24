@@ -15,8 +15,8 @@ server.setupConnection()
 mode = 0
 
 while run:
+	command = server.dataTransfer()
 	if mode == 0: #drive manual
-		command = server.dataTransfer()
 		if command == 'a':
 			Motor.forward_1(1)
 			Motor.stop_2()
