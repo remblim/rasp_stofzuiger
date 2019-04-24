@@ -24,7 +24,7 @@ class Server():
 		return command
 	
 	def send(self,data):
-		self.s.send(str.encode(data,'utf-8'))
+		self.s.send(str.encode(str(data),'utf-8'))
 		
 if __name__ == "__main__":
 	server = Server()
