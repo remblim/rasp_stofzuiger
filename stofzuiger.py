@@ -50,10 +50,10 @@ while run:
 		
 	if command == 'mode 0':
 		mode = 0
-		print(mode)
+		print('manual drive')
 	elif command == 'mode 1':
 		mode = 1
-		print(mode)
+		print('automatic drive')
 	elif command == 'mode 2':
 		mode = 2
 		print(mode)
