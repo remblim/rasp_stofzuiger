@@ -41,12 +41,24 @@ while run:
 			Motor.stop_1()
 			Motor.stop_2()
 			break
-		
+		elif command == 'mode 0':
+			mode = 0
+		elif command == 'mode 1':
+			mode = 1
+		elif command == 'mode 2':
+			mode = 2
+		elif command == 'mode 3':
+			mode = 3
+		elif command == 'mode 4':
+			mode = 4
 		else:
 			Motor.stop_1()
 			Motor.stop_2()
 	elif mode == 1:
 		print('automatic navigation')
+	else:
+		print('mode not availlable')
+		print(mode)
 	
 
 	server.send(str(mode))
