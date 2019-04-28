@@ -16,6 +16,7 @@ mode = 0
 
 while run:
 	command = server.dataTransfer()
+	print(command)
 	if mode == 0: #drive manual
 		if command == 'a':
 			Motor.forward_1(1)
@@ -67,6 +68,4 @@ while run:
 		print('ending')
 		break
 	
-	print('send mode')
 	server.send(str(mode))
-	print('mode send')
