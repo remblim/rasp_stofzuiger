@@ -67,5 +67,6 @@ while run:
 		print('ending')
 		break
 	
-
+	print('send mode')
 	server.send(str(mode))
+	print('mode send')
