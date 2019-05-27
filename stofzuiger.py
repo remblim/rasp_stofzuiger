@@ -45,6 +45,12 @@ while run:
 			Motor.stop_2()
 	elif mode == 1:
 		print('automatic navigation')
+	elif mode == 2:
+		print('mode 2')
+	elif mode == 3:
+		print('mode 3')
+	elif mode == 4:
+		print('mode 4')
 	else:
 		print('mode not availlable')
 		print(mode)
