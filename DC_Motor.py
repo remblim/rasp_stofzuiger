@@ -38,7 +38,7 @@ if __name__ == "__main__":
 	motor = dc_motor()
 	print('rechts vooruit')
 	motor.forward_right(1)
-	motor.stop_1()
+	motor.stop_right()
 	time.sleep(10)
 	print('rechts stop')
 	motor.stop_right()
