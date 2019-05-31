@@ -6,10 +6,15 @@ class dc_motor():
 	def __init__(self):
 		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
-		self.one = GPIO.PWM(8,1000).start(0)
-		self.two = GPIO.PWM(10,1000).start(0)
-		self.three = GPIO.PWM(12,1000).start(0)
-		self.forr = GPIO.PWM(16,1000).start(0)
+		self.one = GPIO.PWM(8,1000)
+		self.two = GPIO.PWM(10,1000)
+		self.three = GPIO.PWM(12,1000)
+		self.forr = GPIO.PWM(16,1000)
+		
+		self.one.start(0)
+		self.two.start(0)
+		self.three.start(0)
+		self.forr.start(0)
 		
 	def forward_right(self,speed):
 		self.one.ChangeDutyCycle(speed*100)
