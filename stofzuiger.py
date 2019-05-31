@@ -51,7 +51,7 @@ while run:
 			Motor.stop_left()
 	elif mode == 1:
 		if command.split()[0] == 'speed':
-			robots.speed = int(command.split()[1])
+			robots.speed = float(command.split()[1])
 		print(robots.speed)
 		print('settings')
 	elif mode == 2:
