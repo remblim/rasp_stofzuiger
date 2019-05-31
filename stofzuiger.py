@@ -50,10 +50,10 @@ while run:
 			Motor.stop_right()
 			Motor.stop_left()
 	elif mode == 1:
-		if command.split[0] == speed:
+		if command.split()[0] == speed:
 			robots.speed = int(command.split[1])
 		print(robots.speed)
-		print('settings, hello')
+		print('settings')
 	elif mode == 2:
 		print('mode 2')
 	elif mode == 3:
