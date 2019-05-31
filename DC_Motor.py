@@ -4,20 +4,20 @@ import time
 
 class dc_motor():
 	def __init__(self):
-		self.GPIO_output = [8,22,12,16]
+		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
 
 	def forward_right(self,speed):
 		GPIO.output(8,1)
-		GPIO.output(22,0)
+		GPIO.output(10,0)
 
 	def backward_right(self,speed):
 		GPIO.output(8,0)
-		GPIO.output(22,1)
+		GPIO.output(10,1)
 		print('1 backward')
 	def stop_right(self):
 		GPIO.output(8,0)
-		GPIO.output(22,0)
+		GPIO.output(10,0)
 
 	def forward_left(self,speed):
 		GPIO.output(12,0)
@@ -33,7 +33,7 @@ class dc_motor():
 		GPIO.output(16,0)
 
 if __name__ == "__main__":
-	GPIO.setmode(GPIO.BOARD)
+	GPIO.setmode(GPIO.BCM)
 	GPIO.cleanup()
 	motor = dc_motor()
 	print('rechts vooruit')
