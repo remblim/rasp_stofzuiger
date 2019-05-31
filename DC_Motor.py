@@ -6,31 +6,35 @@ class dc_motor():
 	def __init__(self):
 		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
-		GPIO.output(self.GPIO_output,0)
+		one = GPIO.PWM(8,1000).start(0)
+		two = GPIO.PWM(10,1000).start(0)
+		three = GPIO.PWM(12,1000).start(0)
+		forr = GPIO.PWM(16,1000).start(0)
+		
 	def forward_right(self,speed):
-		GPIO.output(8,1)
-		GPIO.output(10,0)
+		one.ChangeDutyCycle(speed*100)
+		two.ChangeDutyCycle(0)
 
 	def backward_right(self,speed):
-		GPIO.output(8,0)
-		GPIO.output(10,1)
+		one.ChangeDutyCycle(0)
+		two.ChangeDutyCycle(speed*100)
 		print('1 backward')
+		
 	def stop_right(self):
-		GPIO.output(8,0)
-		GPIO.output(10,0)
+		one.ChangeDutyCycle(0)
+		two.ChangeDutyCycle(0)
 
 	def forward_left(self,speed):
-		GPIO.output(12,0)
-		GPIO.output(16,1)
+		three.ChangeDutyCycle(0)
+		forr.ChangeDutyCycle(speed*100)
 
 	def backward_left(self,speed):
-		GPIO.output(12,1)
-		GPIO.output(16,0)
-		print('2 backward')
+		three.ChangeDutyCycle(0)
+		forr.ChangeDutyCycle(speed*100)
 
 	def stop_left(self):
-		GPIO.output(12,0)
-		GPIO.output(16,0)
+		three.ChangeDutyCycle(0)
+		forr.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
 	GPIO.setmode(GPIO.BOARD)

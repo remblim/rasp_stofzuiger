@@ -25,20 +25,20 @@ while run:
 	print(command)
 	if mode == 0: #drive manual
 		if command == 'a':
-			Motor.forward_right(1)
+			Motor.forward_right(robots.speed)
 			Motor.stop_left()
 			print('left')
 		elif command == 's':
-			Motor.backward_right(1)
-			Motor.backward_left(1)
+			Motor.backward_right(robots.speed)
+			Motor.backward_left(robots.speed)
 			print('backward')
 		elif command == 'd':
 			Motor.stop_right()
-			Motor.forward_left(1)
+			Motor.forward_left(robots.speed)
 			print('right')
 		elif command == 'w':
-			Motor.forward_right(1)
-			Motor.forward_left(1)
+			Motor.forward_right(robots.speed)
+			Motor.forward_left(robots.speed)
 			print('forward')
 		elif command == 'stop':
 			Motor.stop_right()
@@ -52,7 +52,6 @@ while run:
 	elif mode == 1:
 		if command.split()[0] == 'speed':
 			robots.speed = float(command.split()[1])
-		print(robots.speed)
 		print('settings')
 	elif mode == 2:
 		print('mode 2')
