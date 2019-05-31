@@ -6,6 +6,8 @@ class dc_motor():
 	def __init__(self):
 		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
+		stop_left()
+		stop_right()
 
 	def forward_right(self,speed):
 		GPIO.output(8,1)
@@ -36,6 +38,8 @@ if __name__ == "__main__":
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.cleanup()
 	motor = dc_motor()
+	motor.stop_left()
+	motor.stop_right()
 	print('rechts vooruit')
 	motor.forward_right(1)
 	time.sleep(10)
@@ -57,5 +61,6 @@ if __name__ == "__main__":
 	print('links achteruit')
 	motor.backward_left(1)
 	time.sleep(10)
+	motor.stop_left()
 	GPIO.cleanup()
 	print('einde')

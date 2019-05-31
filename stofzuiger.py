@@ -19,30 +19,30 @@ while run:
 	print(command)
 	if mode == 0: #drive manual
 		if command == 'a':
-			Motor.forward_1(1)
-			Motor.stop_2()
+			Motor.forward_right(1)
+			Motor.stop_left()
 			print('left')
 		elif command == 's':
-			Motor.backward_1(1)
-			Motor.backward_2(1)
+			Motor.backward_right(1)
+			Motor.backward_left(1)
 			print('backward')
 		elif command == 'd':
-			Motor.stop_1()
-			Motor.forward_2(1)
+			Motor.stop_right()
+			Motor.forward_left(1)
 			print('right')
 		elif command == 'w':
-			Motor.forward_1(1)
-			Motor.forward_2(1)
+			Motor.forward_right(1)
+			Motor.forward_left(1)
 			print('forward')
 		elif command == 'stop':
-			Motor.stop_1()
-			Motor.stop_2()		
+			Motor.stop_right()
+			Motor.stop_left()		
 		elif command == 'esc':
-			Motor.stop_1()
-			Motor.stop_2()
+			Motor.stop_right()
+			Motor.stop_left()
 		else:
-			Motor.stop_1()
-			Motor.stop_2()
+			Motor.stop_right()
+			Motor.stop_left()
 	elif mode == 1:
 		print('automatic navigation')
 	elif mode == 2:
