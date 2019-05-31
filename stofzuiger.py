@@ -53,7 +53,7 @@ while run:
 		if command.split[0] == speed:
 			robots.speed = int(command.split[1])
 		print(robots.speed)
-		print('settings')
+		print('settings, hello')
 	elif mode == 2:
 		print('mode 2')
 	elif mode == 3:
