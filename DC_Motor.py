@@ -4,20 +4,20 @@ import time
 
 class dc_motor():
 	def __init__(self):
-		self.GPIO_output = [8,10,12,16]
+		self.GPIO_output = [8,22,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
 
 	def forward_1(self,speed):
 		GPIO.output(8,1)
-		GPIO.output(10,0)
+		GPIO.output(22,0)
 
 	def backward_1(self,speed):
 		GPIO.output(8,0)
-		GPIO.output(10,1)
+		GPIO.output(22,1)
 		print('1 backward')
 	def stop_1(self):
 		GPIO.output(8,0)
-		GPIO.output(10,0)
+		GPIO.output(22,0)
 
 	def forward_2(self,speed):
 		GPIO.output(12,0)
