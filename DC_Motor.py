@@ -14,7 +14,7 @@ class dc_motor():
 	def backward_1(self,speed):
 		GPIO.output(8,0)
 		GPIO.output(10,1)
-
+		print('1 backward')
 	def stop_1(self):
 		GPIO.output(8,0)
 		GPIO.output(10,0)
@@ -26,6 +26,7 @@ class dc_motor():
 	def backward_2(self,speed):
 		GPIO.output(12,1)
 		GPIO.output(16,0)
+		print('2 backward')
 
 	def stop_2(self):
 		GPIO.output(12,0)

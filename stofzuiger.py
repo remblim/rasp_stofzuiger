@@ -12,7 +12,7 @@ Motor = dc_motor()
 server = Server()
 server.setupConnection()
 
-mode = 0
+mode = 999
 
 while run:
 	command = server.dataTransfer()
@@ -51,6 +51,8 @@ while run:
 		print('mode 3')
 	elif mode == 4:
 		print('mode 4')
+	elif mode == 999:
+		print('no mode selected')
 	else:
 		print('mode not availlable')
 		print(mode)
@@ -69,6 +71,9 @@ while run:
 		print(mode)
 	elif command == 'mode 4':
 		mode = 4
+		print(mode)
+	elif command == 'mode 9':
+		mode = 999
 		print(mode)
 	elif command == 'esc':
 		print('ending')
