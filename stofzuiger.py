@@ -12,7 +12,7 @@ Motor = dc_motor()
 server = Server()
 server.setupConnection()
 
-mode = 999
+mode = 0
 
 while run:
 	command = server.dataTransfer()
