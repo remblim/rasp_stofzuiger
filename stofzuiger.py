@@ -2,9 +2,15 @@ from conectie import Server
 from DC_Motor import dc_motor
 import RPi.GPIO as GPIO
 
+class robot():
+	def __init__(self):
+		self.speed = 1
+
 #initialisatie code
 GPIO.setmode(GPIO.BOARD) #board setten
 run = True
+
+robots = robot()
 
 Connecting = Server()
 Motor = dc_motor()
@@ -44,6 +50,9 @@ while run:
 			Motor.stop_right()
 			Motor.stop_left()
 	elif mode == 1:
+		if command.split[0] == speed:
+			robots.speed = int(command.split[1])
+		print(robots.speed)
 		print('settings')
 	elif mode == 2:
 		print('mode 2')
