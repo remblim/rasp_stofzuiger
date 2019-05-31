@@ -44,7 +44,7 @@ while run:
 			Motor.stop_right()
 			Motor.stop_left()
 	elif mode == 1:
-		print('automatic navigation')
+		print('settings')
 	elif mode == 2:
 		print('mode 2')
 	elif mode == 3:
