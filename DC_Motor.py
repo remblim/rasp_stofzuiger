@@ -6,8 +6,6 @@ class dc_motor():
 	def __init__(self):
 		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
-		stop_left()
-		stop_right()
 
 	def forward_right(self,speed):
 		GPIO.output(8,1)
