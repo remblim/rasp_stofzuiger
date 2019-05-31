@@ -33,7 +33,7 @@ class dc_motor():
 		GPIO.output(16,0)
 
 if __name__ == "__main__":
-	GPIO.setmode(GPIO.BCM)
+	GPIO.setmode(GPIO.BOARD)
 	GPIO.cleanup()
 	motor = dc_motor()
 	print('rechts vooruit')
