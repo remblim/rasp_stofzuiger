@@ -33,8 +33,8 @@ class dc_motor():
 		self.forr.ChangeDutyCycle(speed*100)
 
 	def backward_left(self,speed):
-		self.three.ChangeDutyCycle(0)
-		self.forr.ChangeDutyCycle(speed*100)
+		self.three.ChangeDutyCycle(speed*100)
+		self.forr.ChangeDutyCycle(0)
 
 	def stop_left(self):
 		self.three.ChangeDutyCycle(0)
