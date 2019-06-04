@@ -28,8 +28,8 @@ class dc_motor():
 		self.tijd = time.time()
 	
 	def step(self):
-		acceleration = 0.01
-		deceleration = -0.01
+		acceleration = 0.005
+		deceleration = -0.005
 		delta_tijd = time.time() - self.tijd
 		
 		if self.r_speed < self.r_target_speed: #versnelling
