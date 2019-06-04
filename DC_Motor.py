@@ -36,31 +36,46 @@ class dc_motor():
 			self.r_speed = self.r_speed + acceleration * delta_tijd
 			if self.r_speed > 1:
 				self.r_speed = 1
-			if self.r_speed < self.min_speed:
-				self.r_speed = self.min_speed
+			if self.r_speed < -1:
+				self.r_speed = -1
 		elif self.r_speed > self.r_target_speed: #vertraging
 			self.r_speed = self.r_speed + deceleration * delta_tijd
 			if self.r_speed > 1:
 				self.r_speed = 1
-			if self.r_speed < self.min_speed:
-				self.r_speed = 0
+			if self.r_speed < -1:
+				self.r_speed = -1
 		
 		if self.l_speed < self.l_target_speed: #versnelling
 			self.l_speed = self.l_speed + acceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
-			if self.l_speed < self.min_speed:
-				self.l_speed = self.min_speed
+			if self.l_speed < -1:
+				self.l_speed = -1
 		elif self.l_speed > self.l_target_speed: #vertraging
 			self.l_speed = self.l_speed + deceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
-			if self.l_speed < self.min_speed:
-				self.l_speed = 0
-		self.one.ChangeDutyCycle(self.l_speed*100)
-		self.two.ChangeDutyCycle(0)
-		self.three.ChangeDutyCycle(0)
-		self.forr.ChangeDutyCycle(self.r_speed*100)
+			if self.l_speed < -1:
+				self.l_speed = -1
+
+		if self.r_speed < 0:
+			self.speed_three = -self.r_speed
+			self.speed_forr = 0
+		else:
+			self.speed_three = 0
+			self.speed_forr = self.r_speed
+			
+		if self.l_speed < 0:
+			self.speed_one = -self.l_speed
+			self.speed_two = 0
+		else:
+			self.speed_one = 0
+			self.speed_two = self.l_speed
+			
+		self.one.ChangeDutyCycle(self.speed_one*100)
+		self.two.ChangeDutyCycle(self.speed_two*100)
+		self.three.ChangeDutyCycle(self.speed_three*100)
+		self.forr.ChangeDutyCycle(self.speed_forr*100)
 
 	def forward_right(self,speed):
 		self.r_target_speed = speed
