@@ -34,56 +34,44 @@ class dc_motor():
 		
 		if self.r_speed < self.r_target_speed: #versnelling
 			self.r_speed = self.r_speed + acceleration * delta_tijd
-			if self.r_speed > 1:
-				self.r_speed = 1
-			if self.r_speed < -1:
-				self.r_speed = -1
+			if self.r_speed > self.max_speed-self.min_speed:
+				self.r_speed = self.max_speed-self.min_speed
+			if self.r_speed < -self.max_speed-self.min_speed:
+				self.r_speed = -self.max_speed-self.min_speed
 		elif self.r_speed > self.r_target_speed: #vertraging
 			self.r_speed = self.r_speed + deceleration * delta_tijd
-			if self.r_speed > 1:
-				self.r_speed = 1
-			if self.r_speed < -1:
-				self.r_speed = -1
+			if self.r_speed > self.max_speed-self.min_speed:
+				self.r_speed = self.max_speed-self.min_speed
+			if self.r_speed < -self.max_speed-self.min_speed:
+				self.r_speed = -self.max_speed-self.min_speed
 		
 		if self.l_speed < self.l_target_speed: #versnelling
 			self.l_speed = self.l_speed + acceleration * delta_tijd
-			if self.l_speed > 1:
-				self.l_speed = 1
-			if self.l_speed < -1:
-				self.l_speed = -1
+			if self.l_speed > self.max_speed-self.min_speed:
+				self.l_speed = self.max_speed-self.min_speed
+			if self.l_speed < -self.max_speed-self.min_speed:
+				self.l_speed = -self.max_speed-self.min_speed
 		elif self.l_speed > self.l_target_speed: #vertraging
 			self.l_speed = self.l_speed + deceleration * delta_tijd
-			if self.l_speed > 1:
-				self.l_speed = 1
-			if self.l_speed < -1:
-				self.l_speed = -1
+			if self.l_speed > self.max_speed-self.min_speed:
+				self.l_speed = self.max_speed-self.min_speed
+			if self.l_speed < -self.max_speed-self.min_speed:
+				self.l_speed = -self.max_speed-self.min_speed
 		print(self.r_speed,self.l_speed)
 		if self.r_speed < 0:
 			self.speed_one = 0
-			if self.r_speed > -self.min_speed:
-				self.speed_two = 0
-			else:
-				self.speed_two = -self.r_speed
+			self.speed_two = -self.r_speed + self.min_speed
 		else:
 			self.speed_two = 0
-			if self.r_speed < self.min_speed:
-				self.speed_one = 0
-			else:
-				self.speed_one = self.r_speed
+			self.speed_one = self.r_speed + self.min_speed
 			
 			
 		if self.l_speed < 0:
 			self.speed_forr = 0
-			if self.l_speed > -self.min_speed:
-				self.speed_three = 0
-			else:
-				self.speed_three = -self.l_speed
+			self.speed_three = -self.l_speed + self.min_speed
 		else:
 			self.speed_three = 0
-			if self.l_speed < self.min_speed:
-				self.speed_forr = 0
-			else:
-				self.speed_forr = self.l_speed
+			self.speed_forr = self.l_speed + self.min_speed
 			
 		self.one.ChangeDutyCycle(self.speed_one*100)
 		self.two.ChangeDutyCycle(self.speed_two*100)
