@@ -81,8 +81,7 @@ class dc_motor():
 		self.r_target_speed = speed
 
 	def backward_right(self,speed):
-		self.one.ChangeDutyCycle(0)
-		self.two.ChangeDutyCycle(speed*100)
+		self.r_target_speed = -speed
 		
 	def stop_right(self):
 		self.r_target_speed = 0
@@ -91,8 +90,7 @@ class dc_motor():
 		self.l_target_speed = speed
 
 	def backward_left(self,speed):
-		self.three.ChangeDutyCycle(speed*100)
-		self.forr.ChangeDutyCycle(0)
+		self.l_target_speed = -speed
 
 	def stop_left(self):
 		self.l_target_speed = 0
