@@ -52,6 +52,10 @@ while run:
 	elif mode == 1:
 		if command.split()[0] == 'speed':
 			robots.speed = float(command.split()[1])
+		elif command.split()[0] == 'accelerate_time':
+			Motor.accelerate_time = float(command.split()[1])
+		elif command.split()[0] == 'decelerate_time':
+			Motor.decelerate_time = float(command.split()[1])
 		print('settings')
 	elif mode == 2:
 		print('mode 2')
