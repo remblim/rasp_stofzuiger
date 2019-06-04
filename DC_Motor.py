@@ -79,7 +79,7 @@ class dc_motor():
 		if self.l_speed < 0:
 			self.speed_forr = 0
 			self.speed_three = -self.l_speed + self.min_speed
-		elif self.r_speed > 0:
+		elif self.l_speed > 0:
 			self.speed_three = 0
 			self.speed_forr = self.l_speed + self.min_speed
 		else:
