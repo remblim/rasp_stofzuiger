@@ -60,17 +60,30 @@ class dc_motor():
 		print(self.r_speed,self.l_speed)
 		if self.r_speed < 0:
 			self.speed_three = 0
-			self.speed_forr = -self.r_speed
+			if self.r_speed > -0.3:
+				self.speed_forr = 0
+			else:
+				self.speed_forr = -self.r_speed
 		else:
-			self.speed_three = self.r_speed
 			self.speed_forr = 0
+			if self.r_speed < 0.3:
+				self.speed_three = 0
+			else:
+				self.speed_three = self.r_speed
+			
 			
 		if self.l_speed < 0:
-			self.speed_one = -self.l_speed
 			self.speed_two = 0
+			if self.l_speed > -0.3:
+				self.speed_one = 0
+			else:
+				self.speed_two = self.l_speed
 		else:
-			self.speed_one = 0
-			self.speed_two = self.l_speed
+			self.speed_three = 0
+			if self.l_speed < 0.3:
+				self.speed_two = 0
+			else:
+				self.speed_two = self.r_speed
 			
 		self.one.ChangeDutyCycle(self.speed_one*100)
 		self.two.ChangeDutyCycle(self.speed_two*100)
