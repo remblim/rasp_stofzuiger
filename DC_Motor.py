@@ -60,8 +60,8 @@ class dc_motor():
 		print(self.l_speed,self.r_speed)
 		self.one.ChangeDutyCycle(self.l_speed*100)
 		self.two.ChangeDutyCycle(0)
-		self.three.ChangeDutyCycle(self.r_speed*100)
-		self.forr.ChangeDutyCycle(0)
+		self.three.ChangeDutyCycle(0)
+		self.forr.ChangeDutyCycle(self.r_speed*100)
 
 	def forward_right(self,speed):
 		self.r_target_speed = speed
@@ -71,8 +71,7 @@ class dc_motor():
 		self.two.ChangeDutyCycle(speed*100)
 		
 	def stop_right(self):
-		self.one.ChangeDutyCycle(0)
-		self.two.ChangeDutyCycle(0)
+		self.r_target_speed = 0
 
 	def forward_left(self,speed):
 		self.l_target_speed = speed
@@ -82,8 +81,7 @@ class dc_motor():
 		self.forr.ChangeDutyCycle(0)
 
 	def stop_left(self):
-		self.three.ChangeDutyCycle(0)
-		self.forr.ChangeDutyCycle(0)
+		self.l_target_speed = 0
 
 if __name__ == "__main__":
 	GPIO.setmode(GPIO.BOARD)
