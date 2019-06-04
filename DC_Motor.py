@@ -57,13 +57,13 @@ class dc_motor():
 				self.l_speed = 1
 			if self.l_speed < -1:
 				self.l_speed = -1
-
+		print(self.r_speed,self.l_speed)
 		if self.r_speed < 0:
-			self.speed_three = -self.r_speed
-			self.speed_forr = 0
-		else:
 			self.speed_three = 0
-			self.speed_forr = self.r_speed
+			self.speed_forr = -self.r_speed
+		else:
+			self.speed_three = self.r_speed
+			self.speed_forr = 0
 			
 		if self.l_speed < 0:
 			self.speed_one = -self.l_speed
