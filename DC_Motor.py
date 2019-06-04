@@ -48,12 +48,14 @@ class dc_motor():
 				self.r_speed = 0
 		
 		if self.l_speed < self.l_target_speed: #versnelling
+			print('versnelling')
 			self.l_speed = self.l_speed + acceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
 				self.l_speed = self.min_speed
 		elif self.l_speed > self.r_target_speed: #vertraging
+			print('vertraging')
 			self.l_speed = self.l_speed + deceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
