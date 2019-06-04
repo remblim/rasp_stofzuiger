@@ -86,3 +86,4 @@ while run:
 		break
 	
 	server.send(str(mode))
+	Motor.step()

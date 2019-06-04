@@ -16,9 +16,46 @@ class dc_motor():
 		self.three.start(0)
 		self.forr.start(0)
 		
-	def forward_right(self,speed):
-		self.one.ChangeDutyCycle(speed*100)
+		self.accelerate_time = 3
+		self.decelerate_time = 3
+		self.max_speed = 1
+		self.min_speed = 0.3
+		self.r_speed = 0
+		self.l_speed = 0
+		self.l_target_speed = 0
+		self.r_target_speed = 0
+		
+		self.tijd = time.thread_time_ns()
+	
+	def step(self):
+		acceleration = (self.max_speed-self.min_speed)/self.accelerate_time
+		deceleration = (self.min_speed-self.max_speed)/self.decelerate_time
+		delta_tijd = time.thread_time_ns() - self.tijd
+		
+		if self.r_speed < self.r_target_speed: #versnelling
+			self.r_speed = self.r_speed + acceleration * delta_tijd * 1000
+			if self.l_speed < self.min_speed:
+				self.l_speed = self.min_speed
+		else: #vertraging
+			self.r_speed = self.r_speed + deceleration * delta_tijd * 1000
+			if self.l_speed < self.min_speed:
+				self.l_speed = 0
+		
+		if self.l_speed < self.l_target_speed: #versnelling
+			self.l_speed = self.l_speed + acceleration * delta_tijd * 1000
+			if self.l_speed < self.min_speed:
+				self.l_speed = self.min_speed
+		else: #vertraging
+			self.l_speed = self.l_speed + deceleration * delta_tijd * 1000
+			if self.l_speed < self.min_speed:
+				self.l_speed = 0
+		self.one.ChangeDutyCycle(self.l_speed*100)
 		self.two.ChangeDutyCycle(0)
+		self.three.ChangeDutyCycle(self.r_speed*100)
+		self.forr.ChangeDutyCycle(0)
+
+	def forward_right(self,speed):
+		self.r_speed = speed
 
 	def backward_right(self,speed):
 		self.one.ChangeDutyCycle(0)
@@ -29,8 +66,7 @@ class dc_motor():
 		self.two.ChangeDutyCycle(0)
 
 	def forward_left(self,speed):
-		self.three.ChangeDutyCycle(0)
-		self.forr.ChangeDutyCycle(speed*100)
+		self.l_speed = speed
 
 	def backward_left(self,speed):
 		self.three.ChangeDutyCycle(speed*100)
