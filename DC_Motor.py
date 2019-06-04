@@ -33,26 +33,26 @@ class dc_motor():
 		delta_tijd = time.time() - self.tijd
 		
 		if self.r_speed < self.r_target_speed: #versnelling
-			self.r_speed = self.r_speed + acceleration * delta_tijd * 1000
+			self.r_speed = self.r_speed + acceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
 				self.l_speed = self.min_speed
-		else: #vertraging
-			self.r_speed = self.r_speed + deceleration * delta_tijd * 1000
+		elif self.r_speed > self.r_target_speed: #vertraging
+			self.r_speed = self.r_speed + deceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
 				self.l_speed = 0
 		
 		if self.l_speed < self.l_target_speed: #versnelling
-			self.l_speed = self.l_speed + acceleration * delta_tijd * 1000
+			self.l_speed = self.l_speed + acceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
 				self.l_speed = self.min_speed
-		else: #vertraging
-			self.l_speed = self.l_speed + deceleration * delta_tijd * 1000
+		elif self.r_speed > self.r_target_speed: #vertraging
+			self.l_speed = self.l_speed + deceleration * delta_tijd
 			if self.l_speed > 1:
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
