@@ -57,6 +57,7 @@ class dc_motor():
 				self.l_speed = 1
 			if self.l_speed < self.min_speed:
 				self.l_speed = 0
+		print(self.l_speed,self.r_speed)
 		self.one.ChangeDutyCycle(self.l_speed*100)
 		self.two.ChangeDutyCycle(0)
 		self.three.ChangeDutyCycle(self.r_speed*100)
