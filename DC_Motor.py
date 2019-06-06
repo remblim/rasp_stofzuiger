@@ -6,10 +6,10 @@ class dc_motor():
 	def __init__(self):
 		self.GPIO_output = [8,10,12,16]
 		GPIO.setup(self.GPIO_output,GPIO.OUT)
-		self.one = GPIO.PWM(8,1000)
-		self.two = GPIO.PWM(10,1000)
-		self.three = GPIO.PWM(12,1000)
-		self.forr = GPIO.PWM(16,1000)
+		self.one = GPIO.PWM(8,10000)
+		self.two = GPIO.PWM(10,10000)
+		self.three = GPIO.PWM(12,10000)
+		self.forr = GPIO.PWM(16,10000)
 		
 		self.one.start(0)
 		self.two.start(0)
