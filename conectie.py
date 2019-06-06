@@ -22,9 +22,10 @@ class Server():
 		command = []
 		while True:
 			recieved = self.conn.recv(1024)
-			command.append(recieved.decode('utf-8'))
+			recieved = recieved.decode('utf-8'))
 			if command[-1] == 'einde':
 				break
+			command.append(recieved)
 		return command
 	
 	def send(self,data):
