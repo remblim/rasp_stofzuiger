@@ -28,6 +28,7 @@ class dc_motor():
 		self.tijd = time.time()
 	
 	def step(self):
+		print('hello')
 		acceleration = (self.max_speed - self.min_speed)/self.accelerate_time
 		deceleration = -(self.max_speed - self.min_speed)/self.decelerate_time
 		delta_tijd = time.time() - self.tijd
