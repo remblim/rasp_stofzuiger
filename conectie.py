@@ -19,8 +19,11 @@ class Server():
 		self.conn, address = self.s.accept()
 		
 	def dataTransfer(self):
-		command = self.conn.recv(1024)
-		command = command.decode('utf-8')
+		while True:
+			recieved = self.conn.recv(1024)
+			command.append(recieved.decode('utf-8'))
+			if command[-1] == 'einde':
+				break
 		return command
 	
 	def send(self,data):
