@@ -94,6 +94,7 @@ class dc_motor():
 
 	def forward_right(self,speed):
 		self.r_target_speed = speed
+		print(speed,self.r_target_speed)
 
 	def backward_right(self,speed):
 		self.r_target_speed = -speed
