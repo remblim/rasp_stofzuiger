@@ -28,7 +28,6 @@ class dc_motor():
 		self.tijd = time.time()
 	
 	def step(self):
-		print(self.r_target_speed,self.l_target_speed)
 		acceleration = (self.max_speed - self.min_speed)/self.accelerate_time
 		deceleration = -(self.max_speed - self.min_speed)/self.decelerate_time
 		delta_tijd = time.time() - self.tijd
@@ -94,7 +93,6 @@ class dc_motor():
 
 	def forward_right(self,speed):
 		self.r_target_speed = speed
-		print(speed,self.r_target_speed)
 
 	def backward_right(self,speed):
 		self.r_target_speed = -speed
