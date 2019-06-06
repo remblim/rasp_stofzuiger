@@ -23,6 +23,7 @@ class Server():
 		while True:
 			recieved = self.conn.recv(1024)
 			recieved = recieved.decode('utf-8')
+			print(recieved)
 			if recieved == 'einde':
 				break
 			command.append(recieved)
