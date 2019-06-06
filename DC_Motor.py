@@ -65,6 +65,7 @@ class dc_motor():
 			self.l_speed = 0
 
 		print(self.r_speed,self.l_speed)
+		print(self.r_target_speed,self.l_target_speed)
 		if self.r_speed < 0:
 			self.speed_one = 0
 			self.speed_two = -self.r_speed + self.min_speed
