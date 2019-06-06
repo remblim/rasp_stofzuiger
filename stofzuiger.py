@@ -24,7 +24,6 @@ mode = 0
 
 while run:
 	command = server.dataTransfer()
-	print(command)
 	for items in command:
 		print(items)
 		if mode == 0: #drive manual
@@ -97,4 +96,3 @@ while run:
 	
 	server.send(str(mode))
 	Motor.step()
-	print('step')
