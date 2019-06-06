@@ -24,8 +24,9 @@ mode = 0
 
 while run:
 	command = server.dataTransfer()
+	print(command)
+	print(mode)
 	for items in command:
-		print(items)
 		if mode == 0: #drive manual
 			if items == 'a':
 				Motor.forward_right(robots.speed)
@@ -53,6 +54,7 @@ while run:
 				Motor.stop_right()
 				Motor.stop_left()
 		elif mode == 1:
+			print('settings')
 			if items.split()[0] == 'speed':
 				robots.speed = float(items.split()[1])
 			elif items.split()[0] == 'accelerate_time':
@@ -61,7 +63,6 @@ while run:
 			elif items.split()[0] == 'decelerate_time':
 				Motor.decelerate_time = float(items.split()[1])
 				print('decelerate_time',Motor.decelerate_time)
-			print('settings')
 		elif mode == 2:
 			print('mode 2')
 		elif mode == 3:
@@ -72,7 +73,6 @@ while run:
 			print('no mode selected')
 		else:
 			print('mode not availlable')
-			print(mode)
 			
 		if items == 'mode 0':
 			mode = 0
@@ -96,3 +96,4 @@ while run:
 	
 	server.send(str(mode))
 	Motor.step()
+	print('step')
