@@ -1,5 +1,6 @@
 from conectie import Server
 from DC_Motor import dc_motor
+from accu import battery
 import RPi.GPIO as GPIO
 
 class robot():
@@ -14,6 +15,7 @@ robots = robot()
 
 Connecting = Server()
 Motor = dc_motor()
+Battery = battery()
 
 server = Server()
 server.setupConnection()
