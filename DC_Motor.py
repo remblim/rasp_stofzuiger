@@ -95,6 +95,7 @@ class dc_motor():
 		self.two.ChangeDutyCycle(self.speed_two*100)
 		self.three.ChangeDutyCycle(self.speed_three*100)
 		self.forr.ChangeDutyCycle(self.speed_forr*100)
+		self.tijd = time.time()
 
 	def forward_right(self,speed):
 		self.r_target_speed = speed
