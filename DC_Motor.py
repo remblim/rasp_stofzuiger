@@ -31,6 +31,7 @@ class dc_motor():
 		acceleration = (self.max_speed - self.min_speed)/self.accelerate_time
 		deceleration = -(self.max_speed - self.min_speed)/self.decelerate_time
 		delta_tijd = time.time() - self.tijd
+		print(acceleration,deceleration)
 		
 		if self.r_speed < self.r_target_speed: #versnelling
 			print('r versnelling')
