@@ -62,10 +62,10 @@ class dc_motor():
 			if self.l_speed < -self.max_speed+self.min_speed:
 				self.l_speed = -self.max_speed+self.min_speed
 		
-		if self.r_speed < 0.1 and self.r_target_speed == 0 and self.r_speed > 0.1:
+		if self.r_speed < 0.1 and self.r_target_speed == 0 and self.r_speed > -0.1:
 			self.r_speed = 0
 			
-		if self.l_speed < 0.1 and self.l_target_speed == 0 and self.l_speed > 0.1:
+		if self.l_speed < 0.1 and self.l_target_speed == 0 and self.l_speed > -0.1:
 			self.l_speed = 0
 
 		print(self.r_speed,self.l_speed)
