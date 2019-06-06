@@ -26,6 +26,7 @@ while run:
 	command = server.dataTransfer()
 	print(command)
 	for items in command:
+		print(items)
 		if mode == 0: #drive manual
 			if items == 'a':
 				Motor.forward_right(robots.speed)
@@ -96,3 +97,4 @@ while run:
 	
 	server.send(str(mode))
 	Motor.step()
+	print('step')
