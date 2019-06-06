@@ -31,17 +31,14 @@ class dc_motor():
 		acceleration = (self.max_speed - self.min_speed)/self.accelerate_time
 		deceleration = -(self.max_speed - self.min_speed)/self.decelerate_time
 		delta_tijd = time.time() - self.tijd
-		print(acceleration,deceleration)
 		
 		if self.r_speed < self.r_target_speed: #versnelling
-			print('r versnelling')
 			self.r_speed = self.r_speed + acceleration * delta_tijd
 			if self.r_speed > self.max_speed-self.min_speed:
 				self.r_speed = self.max_speed-self.min_speed
 			if self.r_speed < -self.max_speed+self.min_speed:
 				self.r_speed = -self.max_speed+self.min_speed
 		elif self.r_speed > self.r_target_speed: #vertraging
-			print('r vertraging')
 			self.r_speed = self.r_speed + deceleration * delta_tijd
 			if self.r_speed > self.max_speed-self.min_speed:
 				self.r_speed = self.max_speed-self.min_speed
@@ -49,14 +46,12 @@ class dc_motor():
 				self.r_speed = -self.max_speed+self.min_speed
 		
 		if self.l_speed < self.l_target_speed: #versnelling
-			print('l versnelling')
 			self.l_speed = self.l_speed + acceleration * delta_tijd
 			if self.l_speed > self.max_speed-self.min_speed:
 				self.l_speed = self.max_speed-self.min_speed
 			if self.l_speed < -self.max_speed+self.min_speed:
 				self.l_speed = -self.max_speed+self.min_speed
 		elif self.l_speed > self.l_target_speed: #vertraging
-			print('l vertraging')
 			self.l_speed = self.l_speed + deceleration * delta_tijd
 			if self.l_speed > self.max_speed-self.min_speed:
 				self.l_speed = self.max_speed-self.min_speed
@@ -69,8 +64,6 @@ class dc_motor():
 		if self.l_speed < 0.1 and self.l_target_speed == 0 and self.l_speed > -0.1:
 			self.l_speed = 0
 
-		print(self.r_speed,self.l_speed)
-		print(self.r_target_speed,self.l_target_speed)
 		if self.r_speed < 0:
 			self.speed_one = 0
 			self.speed_two = -self.r_speed + self.min_speed
