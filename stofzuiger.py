@@ -42,6 +42,7 @@ while run:
 				print('right')
 			elif items == 'w':
 				Motor.forward_right(robots.speed)
+				print('robot speed',robots.speed)
 				Motor.forward_left(robots.speed)
 				print('forward')
 			elif items == 'stop':
