@@ -27,39 +27,39 @@ while run:
 	print(command)
 	for items in command:
 		if mode == 0: #drive manual
-			if command == 'a':
+			if items == 'a':
 				Motor.forward_right(robots.speed)
 				Motor.stop_left()
 				print('left')
-			elif command == 's':
+			elif items == 's':
 				Motor.backward_right(robots.speed)
 				Motor.backward_left(robots.speed)
 				print('backward')
-			elif command == 'd':
+			elif items == 'd':
 				Motor.stop_right()
 				Motor.forward_left(robots.speed)
 				print('right')
-			elif command == 'w':
+			elif items == 'w':
 				Motor.forward_right(robots.speed)
 				Motor.forward_left(robots.speed)
 				print('forward')
-			elif command == 'stop':
+			elif items == 'stop':
 				Motor.stop_right()
 				Motor.stop_left()		
-			elif command == 'esc':
+			elif items == 'esc':
 				Motor.stop_right()
 				Motor.stop_left()
 			else:
 				Motor.stop_right()
 				Motor.stop_left()
 		elif mode == 1:
-			if command.split()[0] == 'speed':
-				robots.speed = float(command.split()[1])
-			elif command.split()[0] == 'accelerate_time':
-				Motor.accelerate_time = float(command.split()[1])
+			if items.split()[0] == 'speed':
+				robots.speed = float(items.split()[1])
+			elif items.split()[0] == 'accelerate_time':
+				Motor.accelerate_time = float(items.split()[1])
 				print('accelerate_time',Motor.accelerate_time)
-			elif command.split()[0] == 'decelerate_time':
-				Motor.decelerate_time = float(command.split()[1])
+			elif items.split()[0] == 'decelerate_time':
+				Motor.decelerate_time = float(items.split()[1])
 				print('decelerate_time',Motor.decelerate_time)
 			print('settings')
 		elif mode == 2:
@@ -74,23 +74,23 @@ while run:
 			print('mode not availlable')
 			print(mode)
 			
-		if command == 'mode 0':
+		if items == 'mode 0':
 			mode = 0
-		elif command == 'mode 1':
+		elif items == 'mode 1':
 			mode = 1
-		elif command == 'mode 2':
+		elif items == 'mode 2':
 			mode = 2
 			print(mode)
-		elif command == 'mode 3':
+		elif items == 'mode 3':
 			mode = 3
 			print(mode)
-		elif command == 'mode 4':
+		elif items == 'mode 4':
 			mode = 4
 			print(mode)
-		elif command == 'mode 9':
+		elif items == 'mode 9':
 			mode = 999
 			print(mode)
-		elif command == 'esc':
+		elif items == 'esc':
 			print('ending')
 			break
 	
