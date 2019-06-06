@@ -28,7 +28,7 @@ class dc_motor():
 		self.tijd = time.time()
 	
 	def step(self):
-		print('hello')
+		print(self.r_target_speed,self.l_target_speed)
 		acceleration = (self.max_speed - self.min_speed)/self.accelerate_time
 		deceleration = -(self.max_speed - self.min_speed)/self.decelerate_time
 		delta_tijd = time.time() - self.tijd
@@ -86,10 +86,6 @@ class dc_motor():
 			self.speed_three = 0
 			self.speed_forr = 0
 		
-		print(self.speed_one)
-		print(self.speed_two)
-		print(self.speed_three)
-		print(self.speed_forr)
 		self.one.ChangeDutyCycle(self.speed_one*100)
 		self.two.ChangeDutyCycle(self.speed_two*100)
 		self.three.ChangeDutyCycle(self.speed_three*100)
