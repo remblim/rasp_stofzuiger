@@ -94,8 +94,10 @@ class dc_motor():
 		self.tijd = time.time()
 
 	def forward_right(self,speed):
+		print('right forward')
 		self.r_target_speed = speed
-
+		print(self.r_target_speed)
+		
 	def backward_right(self,speed):
 		self.r_target_speed = -speed
 		
