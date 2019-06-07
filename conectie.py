@@ -35,7 +35,6 @@ class Server():
 		for items in data:
 			print(items)
 			self.conn.send(str.encode(str(items+'|'),'utf-8'))
-			time.sleep(0.2)
 		
 if __name__ == "__main__":
 	server = Server()
