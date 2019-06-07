@@ -21,11 +21,11 @@ class Server():
 		
 	def dataTransfer(self):
 		command = []
+		data_recieved = ''
 		while True:
 			recieved = self.conn.recv(1024)
-			recieved = recieved.decode('utf-8')
-			print(recieved)
-			if recieved == 'einde':
+			data_recieved = data_recieved + recieved.decode('utf-8')
+			if data_recieved.split('|')[-2] == 'einde':
 				break
 			command.append(recieved)
 		return command
@@ -34,7 +34,7 @@ class Server():
 		data.append('einde')
 		for items in data:
 			print(items)
-			self.conn.send(str.encode(str(items),'utf-8'))
+			self.conn.send(str.encode(str(items+'|'),'utf-8'))
 			time.sleep(0.2)
 		
 if __name__ == "__main__":
