@@ -33,6 +33,7 @@ class Server():
 	def send(self,data):
 		data.append('einde')
 		for items in data:
+			print(items)
 			self.conn.send(str.encode(str(items),'utf-8'))
 			time.sleep(0.2)
 		
