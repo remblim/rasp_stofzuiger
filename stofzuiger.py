@@ -47,13 +47,16 @@ while run:
 				print('forwards')
 			elif items == 'stop':
 				Motor.stop_right()
-				Motor.stop_left()		
+				Motor.stop_left()	
+				print('stop')
 			elif items == 'esc':
 				Motor.stop_right()
 				Motor.stop_left()
+				print('escape')
 			else:
 				Motor.stop_right()
 				Motor.stop_left()
+				print('else')
 			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
