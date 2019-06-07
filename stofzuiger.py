@@ -27,7 +27,7 @@ while run:
 	command_got = server.dataTransfer()
 	print(command_got)
 	print(mode)
-	command_give.append('battery '+Battery.status())
+	command_give.append('battery '+str(Battery.status()))
 	for items in command_got:
 		if mode == 0: #drive manual
 			if items == 'a':
