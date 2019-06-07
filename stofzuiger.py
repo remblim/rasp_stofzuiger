@@ -54,6 +54,7 @@ while run:
 			else:
 				Motor.stop_right()
 				Motor.stop_left()
+			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
 			if items.split()[0] == 'speed':
@@ -74,7 +75,6 @@ while run:
 			print('no mode selected')
 		else:
 			print('mode not availlable')
-		print(Motor.l_target_speed,Motor.r_target_speed)
 			
 		if items == 'mode 0':
 			mode = 0
