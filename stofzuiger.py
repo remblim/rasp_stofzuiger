@@ -53,6 +53,7 @@ while run:
 				Motor.stop_right()
 				Motor.stop_left()
 				print('escape')
+			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
 			if items.split()[0] == 'speed':
