@@ -95,7 +95,7 @@ while run:
 		elif items == 'esc':
 			print('ending')
 			break
-	command_give.append('mode '+ mode)
+	command_give.append('mode '+str(mode))
 	server.send(command_give)
 	Motor.step()
 	Battery.step()
