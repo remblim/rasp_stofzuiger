@@ -64,7 +64,6 @@ while run:
 			elif items.split()[0] == 'decelerate_time':
 				Motor.decelerate_time = float(items.split()[1])
 				print('decelerate_time',Motor.decelerate_time)
-		print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 2:
 			print('mode 2')
 		elif mode == 3:
@@ -75,6 +74,7 @@ while run:
 			print('no mode selected')
 		else:
 			print('mode not availlable')
+		print(Motor.l_target_speed,Motor.r_target_speed)
 			
 		if items == 'mode 0':
 			mode = 0
