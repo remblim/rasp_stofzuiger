@@ -43,7 +43,7 @@ while run:
 			elif items == 'w':
 				Motor.forward_right(robots.speed)
 				Motor.forward_left(robots.speed)
-				print(robots.speed)
+				print(Motor.l_target_speed,Motor.r_target_speed)
 				print('forwards')
 			elif items == 'stop':
 				Motor.stop_right()
@@ -64,6 +64,7 @@ while run:
 			elif items.split()[0] == 'decelerate_time':
 				Motor.decelerate_time = float(items.split()[1])
 				print('decelerate_time',Motor.decelerate_time)
+		print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 2:
 			print('mode 2')
 		elif mode == 3:
