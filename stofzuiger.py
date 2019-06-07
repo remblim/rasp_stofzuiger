@@ -25,8 +25,6 @@ mode = 0
 while run:
 	command_give = []
 	command_got = server.dataTransfer()
-	print(command_got)
-	print(mode)
 	command_give.append('battery '+str(Battery.status()))
 	for items in command_got:
 		if mode == 0: #drive manual
@@ -95,6 +93,7 @@ while run:
 		elif items == 'esc':
 			print('ending')
 			break
+	print('step')
 	command_give.append('mode '+str(mode))
 	server.send(command_give)
 	Motor.step()
