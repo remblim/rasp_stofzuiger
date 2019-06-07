@@ -30,7 +30,10 @@ class Server():
 		return command
 	
 	def send(self,data):
-		self.conn.send(str.encode(str(data),'utf-8'))
+		data.append('einde')
+		for items in data:
+			self.conn.send(str.encode(str(data),'utf-8'))
+			time.sleep(0.05)
 		
 if __name__ == "__main__":
 	server = Server()

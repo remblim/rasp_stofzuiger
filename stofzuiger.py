@@ -23,10 +23,12 @@ server.setupConnection()
 mode = 0
 
 while run:
-	command = server.dataTransfer()
-	print(command)
+	command_give = []
+	command_got = server.dataTransfer()
+	print(command_got)
 	print(mode)
-	for items in command:
+	command_give.append('battery '+Battery.status())
+	for items in command_got:
 		if mode == 0: #drive manual
 			if items == 'a':
 				Motor.forward_right(robots.speed)
@@ -93,7 +95,7 @@ while run:
 		elif items == 'esc':
 			print('ending')
 			break
-	
-	server.send(str(mode))
+	command_give.append('mode '+ mode)
+	server.send(command_give)
 	Motor.step()
-	print('step')
+	Battery.step()
