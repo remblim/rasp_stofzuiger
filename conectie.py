@@ -34,7 +34,7 @@ class Server():
 		data.append('einde')
 		for items in data:
 			self.conn.send(str.encode(str(items),'utf-8'))
-			time.sleep(0.05)
+			time.sleep(0.1)
 		
 if __name__ == "__main__":
 	server = Server()
