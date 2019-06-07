@@ -35,7 +35,7 @@ while run:
 			elif items == 's':
 				Motor.backward_right(robots.speed)
 				Motor.backward_left(robots.speed)
-				print('backward')
+				print('backwards')
 			elif items == 'd':
 				Motor.stop_right()
 				Motor.forward_left(robots.speed)
@@ -44,7 +44,7 @@ while run:
 				Motor.forward_right(robots.speed)
 				Motor.forward_left(robots.speed)
 				print(robots.speed)
-				print('forward')
+				print('forwards')
 			elif items == 'stop':
 				Motor.stop_right()
 				Motor.stop_left()		
