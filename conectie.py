@@ -26,14 +26,14 @@ class Server():
 			recieved = self.conn.recv(1024)
 			data_recieved = data_recieved + recieved.decode('utf-8')
 			if data_recieved.split('|')[-2] == 'einde':
+				command = data_recieved.split('|')
 				break
-			command.append(recieved)
+		print(command)
 		return command
 	
 	def send(self,data):
 		data.append('einde')
 		for items in data:
-			print(items)
 			self.conn.send(str.encode(str(items+'|'),'utf-8'))
 		
 if __name__ == "__main__":
