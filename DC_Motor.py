@@ -85,7 +85,6 @@ class dc_motor():
 			self.speed_three = 0
 			self.speed_forr = 0
 		
-		print(self.r_target_speed,self.l_target_speed)
 		self.one.ChangeDutyCycle(self.speed_one*100)
 		self.two.ChangeDutyCycle(self.speed_two*100)
 		self.three.ChangeDutyCycle(self.speed_three*100)

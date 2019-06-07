@@ -53,11 +53,6 @@ while run:
 				Motor.stop_right()
 				Motor.stop_left()
 				print('escape')
-			else:
-				Motor.stop_right()
-				Motor.stop_left()
-				print('else')
-			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
 			if items.split()[0] == 'speed':
@@ -98,7 +93,6 @@ while run:
 		elif items == 'esc':
 			print('ending')
 			break
-	print('step')
 	command_give.append('mode '+str(mode))
 	server.send(command_give)
 	Motor.step()
