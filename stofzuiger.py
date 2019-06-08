@@ -56,9 +56,12 @@ while run:
 			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
-			if items.split(' ')[0] == 'speed':
+			if items.split(' ')[0] == 'max_speed':
 				Motor.max_speed = float(items.split()[1])
 				print('robots speed',Motor.max_speed)
+			elif items.split(' ')[0] == 'min_speed':
+				Motor.min_speed = float(items.split()[1])
+				print('robots speed',Motor.min_speed)
 			elif items.split(' ')[0] == 'accelerate_time':
 				Motor.accelerate_time = float(items.split()[1])
 				print('accelerate_time',Motor.accelerate_time)
