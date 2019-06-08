@@ -16,8 +16,8 @@ class dc_motor():
 		self.three.start(0)
 		self.forr.start(0)
 		
-		self.accelerate_time = 3
-		self.decelerate_time = 3
+		self.accelerate_time = 1
+		self.decelerate_time = 1
 		self.max_speed = 1
 		self.min_speed = 0.3
 		self.r_speed = 0
