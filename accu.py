@@ -12,5 +12,5 @@ class battery():
 			self.battery[i] = (self.adc.read_adc(i, gain=self.gain)/32767)*6.144
 	
 	def status(self):
-		self.status_battery = ((self.battery[3]-6.0)/(6.0-8.4))*100
+		self.status_battery = ((self.battery[3]-6.0)/(8.4/6))*100
 		return self.status_battery
