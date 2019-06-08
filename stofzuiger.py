@@ -57,7 +57,8 @@ while run:
 		elif mode == 1:
 			print('settings')
 			if items.split(' ')[0] == 'speed':
-				robots.speed = float(items.split()[1])
+				Motor.max_speed = float(items.split()[1])
+				print('robots speed',Motor.max_speed)
 			elif items.split(' ')[0] == 'accelerate_time':
 				Motor.accelerate_time = float(items.split()[1])
 				print('accelerate_time',Motor.accelerate_time)
