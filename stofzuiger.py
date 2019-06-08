@@ -56,7 +56,6 @@ while run:
 			print(Motor.l_target_speed,Motor.r_target_speed)
 		elif mode == 1:
 			print('settings')
-			print(items.split(' '))
 			if items.split(' ')[0] == 'speed':
 				robots.speed = float(items.split()[1])
 			elif items.split(' ')[0] == 'accelerate_time':
