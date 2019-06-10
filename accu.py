@@ -8,12 +8,8 @@ class battery():
 		self.battery = 0
 	
 	def step(self):
-		self.battery = (self.adc.read_adc(0, gain=self.gain)/32767)*6.144
-		print('battery',self.battery)
-		print((self.adc.read_adc(1, gain=self.gain)/32767)*6.144)
-		print((self.adc.read_adc(2, gain=self.gain)/32767)*6.144)
-		print((self.adc.read_adc(3, gain=self.gain)/32767)*6.144)
+		self.battery = (self.adc.read_adc(0, gain=self.gain)/32767)*6.144*2
 	
 	def status(self):
-		self.status_battery = ((self.battery-6.0)/(8.4/6))*100
+		self.status_battery = ((self.battery-6.0)/(8.4-6))*100
 		return self.status_battery
